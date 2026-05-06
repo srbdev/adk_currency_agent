@@ -3,6 +3,7 @@ from typing import Literal
 import httpx
 
 from google.adk.agents import LlmAgent
+from google.adk.models.lite_llm import LiteLlm
 from pydantic import BaseModel, Field
 
 
@@ -109,7 +110,7 @@ class AgentResponse(BaseModel):
 
 root_agent = LlmAgent(
     name='currency_agent',
-    model='gemini-3-flash-preview',
+    model=LiteLlm(model='openai/mistralai/mistral-medium-3-5'),
     description=('Currency Conversion agent'),
     instruction=(
         "You are an agent that helps with user's currency conversions. Use available tools to help with the conversion."

@@ -27,10 +27,6 @@ logger.addHandler(logging.StreamHandler())
 
 async def start_server(host: str, port: int) -> None:
     """Starts the A2A server with the specified host and port."""
-    if not os.getenv('GOOGLE_API_KEY'):
-        logger.error('GOOGLE_API_KEY must be set')
-        sys.exit(1)
-
     base_path = Path(__file__).parent
     card_path = base_path / 'agent_card.json'
     with card_path.open(encoding='utf-8') as f:
