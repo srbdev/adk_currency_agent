@@ -1,14 +1,11 @@
 # ADK Currency Agent
 
-A currency conversion agent built using the [Google Agent Development Kit (ADK)](https://github.com/google/adk-python) with support for traceability extension.
-
-Traceability extension helps return tool trajectory data and can help with agent evals in non-prod environments.
+A currency conversion agent built using the [Google Agent Development Kit (ADK)](https://github.com/google/adk-python).
 
 ## Features
 
 - Currency conversion between multiple supported currencies using Frankfurter.
 - A2A (Agent-to-Agent) protocol support.
-- Traceability support for returning the tool call trajectory data.
 
 ## Prerequisites
 

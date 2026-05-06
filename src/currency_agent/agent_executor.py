@@ -15,13 +15,9 @@ from currency_agent.agent import AgentResponse
 
 logger = logging.getLogger(__name__)
 
-TRACE_KEY = (
-    'github.com/a2aproject/a2a-samples/extensions/traceability/v1/traceability'
-)
-
 
 class CurrencyAgentExecutor(AgentExecutor):
-    """Executor for the Currency Agent that handles task execution and traceability."""
+    """Executor for the Currency Agent that handles task execution."""
 
     def __init__(self, runner: Runner):
         self._runner = runner
@@ -90,9 +86,7 @@ class CurrencyAgentExecutor(AgentExecutor):
             )
             return
 
-        metadata = (
-            {TRACE_KEY: response_trace.as_dict()} if response_trace else {}
-        )
+        metadata = {}
         final_response_text = event.content.parts[0].text.strip()
 
         try:
