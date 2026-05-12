@@ -18,12 +18,7 @@ A currency conversion agent built using the [Google Agent Development Kit (ADK)]
     cd adk_currency_agent
     ```
 
-2. **Set the Google API Key:**
-    ```bash
-    export ENV=development
-    ```
-
-3. **Install dependencies:**
+2. **Install dependencies:**
     ```bash
     uv sync
     ```
