@@ -54,7 +54,7 @@ how much is 10 USD in CAD?
 ```
 
 ```text
-how did the INR value fluctuate against USD from jan 1st, 2026 to now?
+how did the EUR value fluctuate against USD from jan 1st, 2026 to now?
 ```
 
 ## Acknowledgement 
