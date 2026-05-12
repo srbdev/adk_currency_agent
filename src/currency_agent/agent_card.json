@@ -2,38 +2,21 @@
   "capabilities": {
     "streaming": true
   },
-  "defaultInputModes": [
-    "text",
-    "text/plain",
-    "application/json"
-  ],
-  "defaultOutputModes": [
-    "text",
-    "text/plain",
-    "application/json"
-  ],
-  "description": "Currency Conversion Agent",
-  "name": "Currency Conversion Agent",
+  "defaultInputModes": ["text", "text/plain", "application/json"],
+  "defaultOutputModes": ["text", "text/plain", "application/json"],
+  "description": "A currency conversion agent built using ADK",
+  "name": "Currency Agent",
   "preferredTransport": "JSONRPC",
   "protocolVersion": "0.3.0",
-  "provider": {
-    "organization": "Example org",
-    "url": "http://example.com"
-  },
   "skills": [
     {
       "description": "Helps with Currency conversions",
-      "examples": [
-        "Helps with currency conversions"
-      ],
+      "examples": ["How much is 10 USD in CAD?"],
       "id": "currency_conversion",
       "name": "Perform Currency Conversion",
-      "tags": [
-        "currency",
-        "conversion"
-      ]
+      "tags": ["currency", "conversion"]
     }
   ],
   "url": "http://localhost:10999",
-  "version": "1.0.0"
+  "version": "0.1.0"
 }
