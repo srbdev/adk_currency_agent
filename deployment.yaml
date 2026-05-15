@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: currency-agent
+spec:
+  selector:
+    matchLabels:
+      app: currency-agent
+  template:
+    metadata:
+      labels:
+        app: currency-agent
+    spec:
+      containers:
+        - name: agent
+          image: ghcr.io/srbdev/adk-currency-agent:latest
+          env:
+            - name: OPENAI_API_BASE
+              value: ""
+            - name: OPENAI_API_KEY
+              value: ""
+          ports:
+            - containerPort: 10999
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "100m"
+            limits:
+              memory: "128Mi"
+              cpu: "200m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: currency-agent-service
+spec:
+  selector:
+    app: currency-agent
+  ports:
+    - port: 10999
+      targetPort: 10999
+  type: ClusterIP
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: currency-agent-ingress
+spec:
+  rules:
+    - host: demo.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: currency-agent-service
+                port:
+                  number: 10999
