@@ -1,3 +1,5 @@
+import os
+
 from typing import Literal
 
 from google.adk.agents import LlmAgent
@@ -39,7 +41,7 @@ root_agent = LlmAgent(
     tools=[
         McpToolset(
             connection_params=StreamableHTTPConnectionParams(
-                url='http://localhost:8080/mcp'
+                url=os.getenv('MCP_SERVER_HTTP_URL', '')
             )
         )
     ],

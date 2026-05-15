@@ -13,11 +13,13 @@ spec:
     spec:
       containers:
         - name: agent
-          image: ghcr.io/srbdev/adk-currency-agent:latest
+          image: ghcr.io/srbdev/adk-currency-agent:mcp
           env:
             - name: OPENAI_API_BASE
               value: ""
             - name: OPENAI_API_KEY
+              value: ""
+            - name: MCP_SERVER_HTTP_URL
               value: ""
           ports:
             - containerPort: 10999
