@@ -1,3 +1,5 @@
+import os
+
 from typing import Literal
 
 import httpx
@@ -110,7 +112,7 @@ class AgentResponse(BaseModel):
 
 root_agent = LlmAgent(
     name='currency_agent',
-    model=LiteLlm(model='openai/mistralai/mistral-medium-3-5'),
+    model=LiteLlm(model=f"openai/{os.getenv(\'OPENROUTER_MODEL\')}"),
     description=('Currency Conversion agent'),
     instruction=(
         "You are an agent that helps with user's currency conversions. Use available tools to help with the conversion."
