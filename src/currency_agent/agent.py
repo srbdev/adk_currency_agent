@@ -112,7 +112,7 @@ class AgentResponse(BaseModel):
 
 root_agent = LlmAgent(
     name='currency_agent',
-    model=LiteLlm(model=f"openai/{os.getenv(\'OPENROUTER_MODEL\')}"),
+    model=LiteLlm(model=f'openai/{os.getenv("OPENROUTER_MODEL")}'),
     description=('Currency Conversion agent'),
     instruction=(
         "You are an agent that helps with user's currency conversions. Use available tools to help with the conversion."
