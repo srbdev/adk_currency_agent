@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: agent
-          image: ghcr.io/srbdev/adk-currency-agent:mcp
+          image: ghcr.io/srbdev/adk-currency-agent:mcp-20260616
           env:
             - name: OPENAI_API_BASE
               value: ""
