@@ -19,6 +19,8 @@ spec:
               value: ""
             - name: OPENAI_API_KEY
               value: ""
+            - name: OPENROUTER_MODEL
+              value: ""
             - name: MCP_SERVER_HTTP_URL
               value: ""
           ports:
