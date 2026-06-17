@@ -4,9 +4,13 @@ from typing import Literal
 
 import httpx
 
+from dotenv import load_dotenv
 from google.adk.agents import LlmAgent
 from google.adk.models.lite_llm import LiteLlm
 from pydantic import BaseModel, Field
+
+
+load_dotenv()
 
 
 async def get_latest_rates(
