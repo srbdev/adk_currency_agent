@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: agent
-          image: ghcr.io/srbdev/adk-currency-agent:latest
+          image: ghcr.io/srbdev/adk-currency-agent:20260616
           env:
             - name: OPENAI_API_BASE
               value: ""
